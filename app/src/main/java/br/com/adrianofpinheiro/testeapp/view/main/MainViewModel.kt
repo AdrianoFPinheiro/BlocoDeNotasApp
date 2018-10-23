@@ -1,27 +1,27 @@
-package br.com.adrianofpinheiro.blocodenotasapp.view.main
+package br.com.adrianofpinheiro.testeapp.view.main
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import br.com.adrianofpinheiro.blocodenotasapp.model.Nota
-import br.com.adrianofpinheiro.blocodenotasapp.repository.NotaRepository
+import br.com.adrianofpinheiro.testeapp.model.Filme
+import br.com.adrianofpinheiro.testeapp.repository.FilmeRepository
 
 class MainViewModel : ViewModel() {
 
-    val notaRepository = NotaRepository()
-    val notas: MutableLiveData<List<Nota>> = MutableLiveData()
+    val filmeRepository = FilmeRepository()
+    val filmes: MutableLiveData<List<Filme>> = MutableLiveData()
     val isLoading: MutableLiveData<Boolean> = MutableLiveData()
 
     fun buscarTodos() {
         isLoading.value = true
-        notaRepository
+        filmeRepository
                 .buscarTodos(
                         onComplete = {
                             isLoading.value = false
-                            notas.value = it
+                            filmes.value = it
 
                         }, onError = {
                     isLoading.value = false
-                    notas.value = arrayListOf()
+                    filmes.value = arrayListOf()
                 })
 
     }

@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.blocodenotasapp.api
+package br.com.adrianofpinheiro.testeapp.api
 
 
 import okhttp3.OkHttpClient
@@ -11,7 +11,7 @@ class ClientApi<T> {
     fun getClient(c: Class<T>): T {
         val retrofit = Retrofit.Builder()
                 .client(getOkhttpClientAuth().build())
-                .baseUrl("https://blocodenotasadriano.herokuapp.com")
+                .baseUrl("https://sky-exercise.herokuapp.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
@@ -42,6 +42,6 @@ fun getOkhttpClientAuth(): OkHttpClient.Builder {
     }
 }*/
 
-fun getNotaAPI(): NotaAPI {
-    return ClientApi<NotaAPI>().getClient(NotaAPI::class.java)
+fun getNotaAPI(): FilmeAPI {
+    return ClientApi<FilmeAPI>().getClient(FilmeAPI::class.java)
 }

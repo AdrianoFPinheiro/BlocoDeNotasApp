@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.blocodenotasapp
+package br.com.adrianofpinheiro.testeapp
 
 import org.junit.Test
 

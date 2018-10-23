@@ -1,4 +1,4 @@
-package br.com.adrianofpinheiro.blocodenotasapp
+package br.com.adrianofpinheiro.testeapp
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

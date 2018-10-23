@@ -1,7 +1,6 @@
-package br.com.adrianofpinheiro.blocodenotasapp.view.main
+package br.com.adrianofpinheiro.testeapp.view.main
 
 import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -10,8 +9,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import br.com.adrianofpinheiro.blocodenotasapp.R
-import br.com.adrianofpinheiro.blocodenotasapp.model.Nota
+import br.com.adrianofpinheiro.testeapp.R
+import br.com.adrianofpinheiro.testeapp.model.Filme
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -31,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = ViewModelProviders.of(this)
                 .get(MainViewModel::class.java)
 
-        mainViewModel.notas.observe(this, notasObserver)
+        mainViewModel.filmes.observe(this, notasObserver)
         mainViewModel.isLoading.observe(this, loadingObserver)
 
         mainViewModel.buscarTodos()
@@ -42,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private var notasObserver = Observer<List<Nota>> {
+    private var notasObserver = Observer<List<Filme>> {
         preencheALista(it!!)
     }
 
@@ -54,11 +53,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun preencheALista(notas: List<Nota>){
-        adapter = MainListAdapter(this, notas, {},{})
+    private fun preencheALista(filmes: List<Filme>){
+        adapter = MainListAdapter(this, filmes, {}, {})
 
-        rvNotas.adapter = adapter
-        rvNotas.layoutManager = LinearLayoutManager(this)
+        rvFilmes.adapter = adapter
+        rvFilmes.layoutManager = LinearLayoutManager(this)
 
     }
 
