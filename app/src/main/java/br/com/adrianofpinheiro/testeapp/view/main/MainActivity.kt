@@ -30,18 +30,18 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = ViewModelProviders.of(this)
                 .get(MainViewModel::class.java)
 
-        mainViewModel.filmes.observe(this, notasObserver)
+        mainViewModel.filmes.observe(this, filmesObserver)
         mainViewModel.isLoading.observe(this, loadingObserver)
 
         mainViewModel.buscarTodos()
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Adriano Ferreira Pinheiro", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
     }
 
-    private var notasObserver = Observer<List<Filme>> {
+    private var filmesObserver = Observer<List<Filme>> {
         preencheALista(it!!)
     }
 

@@ -1,15 +1,19 @@
 package br.com.adrianofpinheiro.testeapp.view.main
 
 import android.content.Context
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.adrianofpinheiro.testeapp.R
 import br.com.adrianofpinheiro.testeapp.model.Filme
+import br.com.adrianofpinheiro.testeapp.model.Sprites
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.filme_item.view.*
 
 class MainListAdapter(
+
         val context: Context,
         val filmes: List<Filme>,
         val listener: (Filme) -> Unit,
@@ -22,9 +26,9 @@ class MainListAdapter(
     }
 
     override fun onBindViewHolder(holder: FilmeViewHolder, position: Int) {
-        val nota = filmes[position]
+        val filme = filmes[position]
         holder?.let {
-            holder.bindView(nota, listener, listenerDelete)
+            holder.bindView(filme, listener, listenerDelete)
         }
     }
 
@@ -39,14 +43,15 @@ class MainListAdapter(
                      listenerDelete: (Filme) -> Unit) = with(itemView) {
             tvTitle.text = filme.title
             tvOverview.text = filme.overview
-            tvDurarion.text = filme.duration
+            tvDuration.text = filme.duration
             tvReleaseYear.text = filme.release_year
 
+            Picasso.get().load(filme?.coverUrl?.cover_url)
 
-            /*ivDelete.setOnClickListener {
-                listenerDelete(jogo)
-            }*/
+
             setOnClickListener { listener(filme) }
         }
     }
 }
+
+

@@ -1,64 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="8dp">
 
-    <TextView
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivCoverUrl"
+            android:layout_width="96dp"
+            android:layout_height="110dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+    <TextView
         android:id="@+id/tvTitle"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Título"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
-        android:maxLines="1"/>
+        app:layout_constraintStart_toEndOf="@+id/ivCoverUrl"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:id="@+id/tvDuration"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="italic"
-        android:text="Descrição" />
+        android:layout_marginTop="8dp"
+        android:text="Lançamento: 2018"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/tvOverview"
-        android:maxLines="2"/>
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Derscrição"
+        android:textColor="@color/cardview_dark_background"
+        app:layout_constraintEnd_toEndOf="@+id/tvDuration"
+        app:layout_constraintStart_toStartOf="@+id/tvDuration"
+        app:layout_constraintTop_toBottomOf="@+id/tvDuration" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="italic"
-        android:text="Duração / Ano" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvDurarion"
-        android:maxLines="1"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/tvReleaseYear"
-        android:maxLines="1"/>
-<!--
-   <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/ivCoverURL"
-       />
+        android:layout_marginTop="8dp"
+        android:text="Duração"
+        android:textColor="@color/cardview_dark_background"
+        app:layout_constraintEnd_toEndOf="@+id/tvOverview"
+        app:layout_constraintStart_toStartOf="@+id/tvOverview"
+        app:layout_constraintTop_toBottomOf="@+id/tvOverview" />
 
+
+<!--
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ivBackdropsURL"
        />
 -->
-
-</LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

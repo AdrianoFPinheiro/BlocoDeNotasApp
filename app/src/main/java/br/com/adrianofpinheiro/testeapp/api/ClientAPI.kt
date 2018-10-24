@@ -42,6 +42,6 @@ fun getOkhttpClientAuth(): OkHttpClient.Builder {
     }
 }*/
 
-fun getNotaAPI(): FilmeAPI {
+fun getFilmeAPI(): FilmeAPI {
     return ClientApi<FilmeAPI>().getClient(FilmeAPI::class.java)
 }
