@@ -9,6 +9,7 @@ data class Filme(
         var overview: String,
         var duration: String,
         var release_year: String,
-        val coverUrl: Sprites
-//        var backdrops_url: Sprites*/
+        @SerializedName("cover_url")val coverUrl: String
+ //       @SerializedName("backdrops_url")val backdropsUrl: String
+
 )

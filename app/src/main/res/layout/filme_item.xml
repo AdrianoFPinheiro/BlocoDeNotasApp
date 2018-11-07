@@ -75,12 +75,5 @@
         app:layout_constraintTop_toBottomOf="@+id/tvOverview" />
 
 
-<!--
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/ivBackdropsURL"
-       />
--->
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

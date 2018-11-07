@@ -45,8 +45,11 @@ class MainListAdapter(
             tvOverview.text = filme.overview
             tvDuration.text = filme.duration
             tvReleaseYear.text = filme.release_year
-
-            Picasso.get().load(filme?.coverUrl?.cover_url)
+            Picasso.get()
+                    .load(filme.coverUrl)
+                    .placeholder(R.drawable.placeholder)
+                    .error(R.drawable.nofound)
+                    .into(ivCoverUrl)
 
 
             setOnClickListener { listener(filme) }
